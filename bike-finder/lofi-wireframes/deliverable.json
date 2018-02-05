@@ -1,0 +1,20 @@
+{
+  "entrypoints" : [
+    {
+      "name" : "Home Page Pic",
+      "file" : "homePage.png"
+    },
+    {
+      "name" : "Search Page Pic",
+      "file" : "searchPage.png"
+    },
+    {
+      "name" : "Product Page Pic",
+      "file" : "productPage.jpg"
+    },
+    {
+      "name" : "Feature Organization",
+      "file" : "index.html"
+    }
+  ]
+}
