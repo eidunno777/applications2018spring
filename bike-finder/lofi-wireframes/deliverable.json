@@ -2,7 +2,7 @@
   "entrypoints" : [
     {
       "name" : "Home Page Pic",
-      "file" : "homePage.png"
+      "file" : "homePage.jpg"
     },
     {
       "name" : "Search Page Pic",
@@ -22,7 +22,7 @@
     },
     {
       "name" : "Suggested",
-      "file" : "suggested.jpg"
+      "file" : "suggested.png"
     }
   ]
 }
