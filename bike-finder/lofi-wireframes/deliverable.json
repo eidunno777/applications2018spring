@@ -9,12 +9,20 @@
       "file" : "searchPage.png"
     },
     {
-      "name" : "Product Page Pic",
-      "file" : "productPage.jpg"
+      "name" : "Q&A",
+      "file" : "Q&A.jpg"
     },
     {
-      "name" : "Feature Organization",
-      "file" : "index.html"
-    }
+      "name" : "Description",
+      "file" : "description.jpg"
+    },
+    {
+      "name" : "Reviews",
+      "file" : "reviews.jpg"
+    },
+    {
+      "name" : "Suggested",
+      "file" : "suggested.jpg"
+    },
   ]
 }
