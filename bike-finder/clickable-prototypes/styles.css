@@ -1,0 +1,86 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+#homePage{
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 7%;
+  top: 25%;
+  width: 1400px;
+  height: 890px;
+
+}
+
+#searchPage{
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 28%;
+  top: 800px;
+  width: 300px;
+  height: 300px;
+}
+#sugPage{
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 25%;
+  top: 960px;
+  width: 350px;
+  height: 150px;
+}
+#desPage{
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 70%;
+  top: 960px;
+  width: 350px;
+  height: 150px;
+}
+#revPage{
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 45%;
+  top: 960px;
+  width: 350px;
+  height: 150px;
+}
+#qaPage{
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 4%;
+  top: 960px;
+  width: 350px;
+  height: 150px;
+}
+#backHome{
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 30%;
+  top: 20px;
+  width: 450px;
+  height: 150px;
+}
