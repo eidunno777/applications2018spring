@@ -1,0 +1,16 @@
+{
+  "entrypoints" : [
+    {
+      "name" : "First",
+      "file" : "first.jpg"
+    },
+    {
+      "name" : "Sign Up",
+      "file" : "second.jpg"
+    },
+    {
+      "name" : "Thanks",
+      "file" : "third.jpg"
+    }  
+  ]
+}
