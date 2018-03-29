@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+   <!--   <meta name="viewport" content="width=1000, initial-scale=1"> -->
+  </head>
+  <body>
+
+    <div id="wrapper">
+      <div id="pageWrap">
+        <!-- <div id="page1">
+          <img class="img" src="images/p1.png">
+        </div>
+        <div id="page2">
+          <img class="img" src="images/p2.png">
+        </div>
+        <div id="page2">
+          <img class="img" src="images/p3.png">
+        </div> -->
+        <div id="page1">
+          <span class="font" id="p1BigText">WIN FREE RENT FOR A YEAR.</span>
+          <span class="font" id="dateText">April 1 - June 1</span>
+          <button class="font" id="infoText">More Info</button>
+<!--      <img class="img" src="images/mock1.png">-->
+          <img class="img" src="images/p1.png">
+          <img id="circleIcon" src="images/circle.png">
+          <img class="button" id="signUpBut"  src="images/signUpBut.png""></img>
+          <a href='https://www.trulia.com/' target="_blank" id='ezBut1'>
+            <img id="ezBut1img" src="images/ez.png">
+          </a>
+        </div>
+        <div id="page2">
+          <span class="font" id="p2BigText">SIGN UP</span>
+         <!--  <img class="img" src="images/mock2.png"> -->
+          <img class="img" src="images/p2.png">
+          <img class="button" id="submitBut"  src="images/submitBut.png""></img>
+          <img id="inputField" src="images/input.png">
+        </div>
+        <div id="page3">
+         <!--  <img class="img" src="images/mock3.png"> -->
+          <img class="img" src="images/p3.png">
+          <span class="font" id="p3BigText">THANK YOU!</span>
+          <span class="font" id="recievedText">Your submission has been recieved! Tune back in on July 15th to see the winner!</span>
+          <span class="font" id="seeMoreText">&nbsp;And see more great deals at:</span>
+        </div>
+          <div id="infoWrap">
+            <img id="infoWrapImg" src="images/infoBox.png"><
+             <span class="font" id="moreInfoText">This year, EZ Properties is giving away a year’s worth of rent, absolutely free. This promotion is exclusively available to Washington University in St. Louis students and each student may only enter one response. The window to submit an entry is from April 1st to June 1st with the winner being chosen at random on June 7th and publicly announced on June 15th. By submitting an entry your email will automatically be added to our newsletter which you can unsubscribe from at any time. Thanks and good luck!</span>
+          </div>
+        <a href='https://www.trulia.com/' target="_blank" id='ezBut2'>
+          <img id="ezBut2img" src="images/ezP.png">
+        </a>
+      </div>
+    </div>
+    <script>
+      $("#infoText").click(function(){
+        $("#infoWrap").toggleClass("infoWrapMove");
+      });
+      document.getElementById("signUpBut").addEventListener("click", scroll1);
+      document.getElementById("submitBut").addEventListener("click", scroll2);
+      function  scroll1(){
+        // window.scrollTo(0, 1735);
+        window.scroll({ top: 1735, left: 0, behavior: 'smooth' });
+      }
+      function  scroll2(){
+        // window.scrollTo(0, 3875);
+         window.scroll({ top: 3875, left: 0, behavior: 'smooth' });
+      }
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,163 @@
+html{
+  height: 100%;
+  width: 100%;
+  overflow:auto;
+  margin: 0;
+  padding: 0;
+}
+body{
+   height: 100%;
+}
+
+#wrapper {
+  position: relative;
+  /*overflow-x: hidden;*/
+  width: 100%;
+  height: 100%;
+}
+#pageWrap{
+  position: absolute;
+  left: 50%;
+  transform: translate(-101%, 0);
+}
+.img{
+  width: 202%;
+}
+
+#circleIcon{
+  position: absolute;
+  height: 11.6%;
+  left: 43%;
+  top: 3.5%;
+}
+
+#ezBut1{
+  position: absolute;
+  top: 66px;
+  right: -401px;
+}
+#ezBut1img{
+  width: 139%;
+}
+#signUpBut{
+  width: 147%;
+  height: 2.6%;
+  position: absolute;
+  top: 27.3%;
+  right: -75%;
+}
+.font{
+  font-family: 'Roboto', sans-serif;
+  background-color: transparent;
+  color: white;
+}
+#p1BigText{
+  text-align: center;
+  position: absolute;
+  line-height: 1.2;
+  font-size: 75pt;
+  width: 849px;
+  right: -88%;
+  top: 16.8%;
+  background-color: transparent;
+  margin: 0;
+}
+#infoText{
+  border: none;
+  outline: none;
+  font-weight: 300;
+  position: absolute;
+  top: 31%;
+  right: -20%;
+  font-size: 30pt;
+}
+#moreInfoText{
+  position: absolute;
+  top: 125px;
+  left: 30%;
+  width: 720px;
+  font-weight: 300;
+  color: white;
+  text-align: left;
+  font-size: 34pt;
+}
+#infoWrapImg{
+  width: 202%;
+}
+#infoWrap{
+  position: absolute;
+  top: -25%;
+  transition: all 1.4s ease;
+}
+.infoWrapMove{
+  top: 0% !important;
+}
+#dateText{
+  font-weight: 300;
+  position: absolute;
+  top: 1148px;
+  right: -32.5%;
+  font-size: 30pt;
+}
+#submitBut{
+  width: 147%;
+  height:106px;
+  position: absolute;
+  top: 2922px;
+  right: -75%;
+}
+#p2BigText{
+  position: absolute;
+  line-height: 1.2;
+  font-size: 90pt;
+  width: 849px;
+  right: -100%;
+  top: 2153px;
+  background-color: transparent;
+  margin: 0;
+}
+#inputField{
+  position: absolute;
+  left: 27%;
+  top: 2431px;
+  width: 829px;
+}
+#p3BigText{
+  position: absolute;
+  left: 27%;
+  width: 829px;
+  bottom: 1370px;
+  position: absolute;
+  line-height: 1.2;
+  font-size: 90pt;
+  background-color: transparent;
+}
+#recievedText{
+  position: absolute;
+  text-align:  center;  
+  font-weight: 300;
+  left: 22%;
+  bottom: 1111px;
+  width: 744px;
+  font-size: 39pt;
+}
+#seeMoreText{
+  position: absolute;
+  font-weight: 300;
+  left: 31%;
+  bottom: 975px;
+  width: 829px;
+  font-size: 39pt;
+}
+#ezBut2{
+  position: absolute;
+  bottom: 191px;
+  right: -112px;
+}
+#ezBut2img{
+  width: 132%;
+  /*right: 300px;*/
+}
+/*#page2{
+  width: 950px;
+}*/
