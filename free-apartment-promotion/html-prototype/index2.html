@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+     <meta name="viewport" content="width=1200, initial-scale=1">
+  </head>
+  <body>
+
+    <div id="wrapper">
+        <div id="page1">
+          <span class="font" id="p1BigText">WIN FREE RENT FOR A YEAR.</span>
+          <span class="font" id="sorryText">Sorry we our no longer taking submissions at this time. Tune in June 15th to see the winner!</span>
+          <!-- <button class="font" id="infoText">More Info</button> -->
+          <img class="img" id="p1" src="images/p1.png">
+          <img id="circleIcon" src="images/circle.png">
+          <a href='https://www.trulia.com/' target="_blank" id='ezBut1'>
+            <img id="ezBut1img" src="images/ez.png">
+          </a>
+          <div id="infoWrap">
+            <img id="infoWrapImg" src="images/infoBox.png">
+           <span class="font" id="moreInfoText">This year, EZ Properties is giving away a year’s worth of rent, absolutely free. This promotion is exclusively available to Washington University in St. Louis students and each student may only enter one response. The window to submit an entry is from April 1st to June 1st with the winner being chosen at random on June 7th and publicly announced on June 15th. By submitting an entry your email will automatically be added to our newsletter which you can unsubscribe from at any time. Thanks and good luck!</span>
+          </div>
+        </div>
+    </div>
+  </body>
+  <script>
+     $("#infoText").click(function(){
+        $("#infoWrap").toggleClass("infoWrapMove");
+        });
+  </script>
+</html>

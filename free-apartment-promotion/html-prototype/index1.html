@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+     <meta name="viewport" content="width=1200, initial-scale=1">
+  </head>
+  <body>
+
+    <div id="wrapper">
+        <div id="page1">
+          <span class="font" id="p1BigText">WIN FREE RENT FOR A YEAR.</span>
+          <span class="font" id="dateText">April 1 - June 1</span>
+          <button class="font" id="infoText">More Info</button>
+        <!-- <img class="img" src="images/mock1.png">  -->
+          <img class="img" id="p1" src="images/p1.png">
+          <img id="circleIcon" src="images/circle.png">
+          <img class="button" id="signUpBut"  src="images/signUpBut.png"">
+          <a href='https://www.trulia.com/' target="_blank" id='ezBut1'>
+            <img id="ezBut1img" src="images/ez.png">
+          </a>
+          <div id="infoWrap">
+            <img id="infoWrapImg" src="images/infoBox.png">
+           <span class="font" id="moreInfoText">This year, EZ Properties is giving away a year’s worth of rent, absolutely free. This promotion is exclusively available to Washington University in St. Louis students and each student may only enter one response. The window to submit an entry is from April 1st to June 1st with the winner being chosen at random on June 7th and publicly announced on June 15th. By submitting an entry your email will automatically be added to our newsletter which you can unsubscribe from at any time. Thanks and good luck!</span>
+          </div>
+        </div>
+        </div>
+        <div id="page2">
+          <span class="font" id="p2BigText">SIGN UP</span>
+          <!-- <img class="img" src="images/mock2.png"> -->
+          <img class="img" id="p2" src="images/p2.png">
+          <img class="button" id="submitBut"  src="images/submitBut.png">
+          <input type="text" id="fName" placeholder="First Name" autocomplete="off">
+          <input type="text" id="lName" placeholder="Last Name" autocomplete="off">
+          <input type="text" id="email" placeholder="WashU Email" autocomplete="off">
+          <div id="error">
+            <span id="errMsg">Error Message HEYyyy</span>
+            <img id="x" src="images/X.png">
+          </div>
+        </div>
+        <div id="page3">
+          <!-- <img class="img" src="images/mock3.png"> -->
+          <img class="img" id="p3" src="images/p3.png">
+          <span class="font" id="p3BigText">THANK YOU!</span>
+          <span class="font" id="recievedText">Your submission has been recieved! Tune back in on July 15th to see the winner!</span>
+          <span class="font" id="seeMoreText">&nbsp;And see more great deals at:</span>
+          <a href='https://www.trulia.com/' target="_blank" id='ezBut2'>
+            <img id="ezBut2img" src="images/ezP.png">
+          </a>
+    </div>
+    <script>
+      $("#infoText").click(function(){
+      $("#infoWrap").toggleClass("infoWrapMove");
+      });
+      document.getElementById("signUpBut").addEventListener("click", scroll1);
+      document.getElementById("submitBut").addEventListener("click", scroll2);
+      document.getElementById("email").addEventListener("focus", function(){
+         $("#email[type=text]").css("border-color", "rgba(255,255,255,1)");
+      });
+      document.getElementById("lName").addEventListener("focus", function(){
+         $("#lName[type=text]").css("border-color", "rgba(255,255,255,1)");
+      });
+      document.getElementById("fName").addEventListener("focus", function(){
+         $("#fName[type=text]").css("border-color", "rgba(255,255,255,1)");
+      });
+      function  scroll1(){
+        $("#page2").show();
+        window.scroll({ top: 4035, left: 0, behavior: 'smooth' });
+      }
+      function  scroll2(){
+          // var valid = false;
+          var valid = validateEmail($('#email').val());
+
+          if(!valid) {
+            var fInput = document.getElementById('fName');
+            var lInput = document.getElementById('lName');
+            if(fInput.value.length == 0 || lInput.value.length == 0){
+              console.log($("#fname").val());
+              $("#error").show();
+              $("#errMsg").html("Oops! Please fill out each category");
+              if(fInput.value.length == 0){
+                 $("#fName[type=text]").css("border-color", "rgba(216,63,37,1)");
+              }
+              if(lInput.value.length == 0){
+                 $("#lName[type=text]").css("border-color", "rgba(216,63,37,1)");
+              }
+               if(email.value.length == 0){
+                 $("#email[type=text]").css("border-color", "rgba(216,63,37,1)");
+              }
+            }
+            else if($('#email').val() == "duplicate"){
+              console.log("dup");
+              $("#error").show();
+              $("#errMsg").html("Oops! Only one entry per student");
+              $("#email[type=text]").css("border-color", "rgba(216,63,37,1)");
+            }
+            else{
+              $("#error").show();
+              console.log("invalid");
+              $("#errMsg").html("Oops! Invalid email entered");
+              $("#email[type=text]").css("border-color", "rgba(216,63,37,1)");
+            }
+          }
+          else{
+            $("#page3").show();
+            window.scroll({ top: 6875, left: 0, behavior: 'smooth' });
+          }
+      }
+      var w = $(window).width();
+      $("#page2").hide();
+      $("#page3").hide();
+      $("#error").hide();
+      if (w > 530) {      
+        $("#p1").attr("src","images/p1.png");
+      } 
+      else{
+         $("#p1").attr("src","images/p1_2.png");
+      }
+      $(window).resize(function(){
+        // var w = $(window).width();
+        if (w > 530) {      
+          $("#p1").attr("src","images/p1.png");
+          $("#p3").attr("src","images/p3.png");
+        } 
+        else {
+           $("#p1").attr("src","images/p1_2.png");
+           $("#p3").attr("src","images/p3_2.png");
+        }
+      });
+
+
+        function validateEmail(email) {
+            var re = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+            if (re.test(email)) {
+                if (email.indexOf('@wustl.edu', email.length - '@wustl.edu'.length) !== -1) {
+                    return true;
+                } else {
+                    // alert('Email must be a WashU e-mail address');
+                }
+            } else {
+                // alert('Not a valid e-mail address.');
+                return false;
+            }
+        }
+    </script>
+  </body>
+</html>
+

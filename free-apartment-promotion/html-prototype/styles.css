@@ -10,41 +10,46 @@ body{
 }
 
 #wrapper {
+ /* background-color: #67c4d5;*/
   position: relative;
   /*overflow-x: hidden;*/
   width: 100%;
   height: 100%;
-}
-#pageWrap{
-  position: absolute;
-  left: 50%;
-  transform: translate(-101%, 0);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 .img{
-  width: 202%;
+  /*width: 101%;
+  height: 103%;*/
+  width: 100%;
+  height: 100vh;
 }
 
-#circleIcon{
+#circleIcon {
   position: absolute;
-  height: 11.6%;
-  left: 43%;
-  top: 3.5%;
+  height: 36%;
+  left: 50%;
+  top: 10.5%;
+  transform: translate(-50%, 0%);
 }
 
 #ezBut1{
   position: absolute;
-  top: 66px;
-  right: -401px;
+  top: 4%;
+  right: 4%;
 }
 #ezBut1img{
-  width: 139%;
+  width: 8.2vh;
 }
 #signUpBut{
-  width: 147%;
-  height: 2.6%;
+  width: 42.5vh;
+  height: 7.8vh;
   position: absolute;
-  top: 27.3%;
-  right: -75%;
+  top: 81.6%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 .font{
   font-family: 'Roboto', sans-serif;
@@ -55,109 +60,256 @@ body{
   text-align: center;
   position: absolute;
   line-height: 1.2;
-  font-size: 75pt;
-  width: 849px;
-  right: -88%;
-  top: 16.8%;
+  font-size: 5.9vh;
+  width: 50vh;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: 50.5%;
   background-color: transparent;
   margin: 0;
 }
+#p1WinBigText{
+  text-align: center;
+  position: absolute;
+  line-height: 1.2;
+  font-size: 5.9vh;
+  width: 47vh;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: 50.5%;
+  background-color: transparent;
+  margin: 0;
+}
+
 #infoText{
   border: none;
   outline: none;
   font-weight: 300;
   position: absolute;
-  top: 31%;
-  right: -20%;
-  font-size: 30pt;
+  top: 92.3%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-size: 2.3vh;
 }
 #moreInfoText{
   position: absolute;
-  top: 125px;
-  left: 30%;
-  width: 720px;
-  font-weight: 300;
-  color: white;
-  text-align: left;
-  font-size: 34pt;
+    top: 65px;
+    left: 20%;
+    width: 34vh;
+    font-weight: 300;
+    color: white;
+    text-align: left;
+    font-size: 2.1vh;
 }
 #infoWrapImg{
-  width: 202%;
+  width: 50vh;
+  height: 50vh;
+  /*width: 200%;*/
 }
 #infoWrap{
+  left: 50%;
+  transform: translate(-50%, 0%);
   position: absolute;
-  top: -25%;
+  top: -82vh;
   transition: all 1.4s ease;
 }
 .infoWrapMove{
-  top: 0% !important;
+  top: -2vh !important;
 }
 #dateText{
   font-weight: 300;
   position: absolute;
-  top: 1148px;
-  right: -32.5%;
-  font-size: 30pt;
+  top: 65.9%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-size: 2.58vh;
 }
 #submitBut{
-  width: 147%;
-  height:106px;
+  width: 41.6vh;
+  height: 6.3vh;
   position: absolute;
-  top: 2922px;
-  right: -75%;
+  top: 168.8%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 #p2BigText{
   position: absolute;
   line-height: 1.2;
-  font-size: 90pt;
-  width: 849px;
-  right: -100%;
-  top: 2153px;
+  font-size: 7vh;
+  width: 32vh;
+  left: 50%;
+  transform: translate(-66.4%, 0%);
+  top: 124%;
   background-color: transparent;
   margin: 0;
 }
-#inputField{
+input[type=text]{
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.2vh;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid white;
+  border-color:rgba(255,255,255,.5);
   position: absolute;
-  left: 27%;
-  top: 2431px;
-  width: 829px;
+  left: 50%;
+  width: 41.9vh;
+  transform: translate(-50%, 0%);
+}
+::placeholder { 
+  font-size: 2.2vh;
+  font-family: 'Roboto', sans-serif;/* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: .5; /* Firefox */
+}
+textarea:focus, input:focus{
+    outline: none;
+    border-color:rgba(255,255,255,1) !important;
+}
+input:-webkit-autofill {
+  /*background-color: transparent;*/
+  background: transparent;
+    /*-webkit-box-shadow: 0 0 0 500px transparent inset !important;*/
+    -webkit-text-fill-color: white !important;
+}
+
+#fName{
+  top: 139.8%;
+}
+#lName{
+  top: 146.3%;
+}
+#email{
+  top: 153.3%;
+}
+#errMsg{
+  color: #d83f25;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.2vh;
+  width: 400px;
+}
+#x{
+  width: 1.9vh;
+  position: absolute;
+  left: -20%;
+  top: 11%;
+}
+#error{
+  position: absolute;
+  top: 161.2%;
+  left: 48.8%;
+  transform: translate(-50%, 0%);
 }
 #p3BigText{
   position: absolute;
-  left: 27%;
-  width: 829px;
-  bottom: 1370px;
+  left: 50%;
+   text-align:  center; 
+  transform: translate(-50%, 0%);
+  top: 215.3%;
   position: absolute;
   line-height: 1.2;
-  font-size: 90pt;
+  width: 50vh;
+  font-size: 7vh;
   background-color: transparent;
 }
 #recievedText{
   position: absolute;
-  text-align:  center;  
   font-weight: 300;
-  left: 22%;
-  bottom: 1111px;
-  width: 744px;
-  font-size: 39pt;
+  text-align:  center;  
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: 228.3%;
+  width: 40vh;
+  font-size: 2.58vh;
 }
 #seeMoreText{
   position: absolute;
   font-weight: 300;
-  left: 31%;
-  bottom: 975px;
-  width: 829px;
-  font-size: 39pt;
+   text-align:  center; 
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: 243.3%;
+  width: 50vh;
+  font-size: 2.58vh;
 }
 #ezBut2{
   position: absolute;
-  bottom: 191px;
-  right: -112px;
+  top: 263.3%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 #ezBut2img{
-  width: 132%;
-  /*right: 300px;*/
+  width: 30vh;
 }
-/*#page2{
-  width: 950px;
-}*/
+#sorryText{
+    font-weight: 300;
+    width: 35vh;
+    position: absolute;
+    top: 73.9%;
+    left: 50.5%;
+    transform: translate(-50%, 0%);
+    font-size: 2.58vh;
+}
+#congratsText{
+  text-align: center;
+    font-weight: 300;
+    width: 37vh;
+    position: absolute;
+    top: 82.9%;
+    left: 50.5%;
+    transform: translate(-50%, 0%);
+    font-size: 2.58vh;
+    line-height: 4vh;
+}
+#winnerText{
+  font-weight: 300;
+    width: 37vh;
+    position: absolute;
+    top: 70.9%;
+    left: 50.5%;
+    transform: translate(-50%, 0%);
+    font-size: 3.58vh;
+    text-align: center;
+    text-decoration: underline;
+}
+#backText{
+    font-weight: 300;
+    width: 35vh;
+    position: absolute;
+    top: 70.9%;
+    left: 51%;
+    transform: translate(-50%, 0%);
+    font-size: 2.58vh;
+    line-height: 3.7vh;
+}
+.button{
+   font-weight: 300;
+   font-size: 5vh;
+    left: 51%;
+    transform: translate(-50%, 0%);
+  position:  absolute;
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+#before{
+  top: 20vh;
+}
+#during{
+  top: 40vh;
+}
+#after1{
+  top: 60vh;
+}
+#after2{
+  top: 80vh;
+}
+#dup{
+   position:  absolute;
+  color: white;
+  font-weight: 300;
+   left: 54%;
+    transform: translate(-50%, 0%);
+    top: 5vh;
+}
