@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src = "pixelate.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <meta name="viewport" content="width=1200, initial-scale=1">
+  </head>
+  <body>
+    <div id="wrapper">
+      <ol>
+        <li><ul>
+          <li>Small</li>
+          <li>Medium</li>
+          <li>Large</li>
+          </ul></li>
+        <li><ul>MEATS
+          <li>Pepperoni</li>
+          <li>Chicken</li>
+          <li>Beef</li>
+          <li>Bacon</li>
+          <li>Ham</li>
+          <li>Sausage</li>
+          <li>Anchovies </li></ul>
+          <ul>NON-MEATS
+          <li>Mushrooms</li>
+          <li>Onions</li>
+          <li>Peppers</li>
+          <li>Pinapple </li>
+          <li>Olives</li>
+          <li>Spinach</li>
+          <li>Banana Peppers
+       </li></ul>
+      </ol>
+    </div>
+  </body>
+  <script>
+    $('#img').pixelate({ value: 0.001});
+    // $('#img').hide();
+  </script>
+</html>
