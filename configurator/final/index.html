@@ -1,0 +1,332 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pizza Customizer</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Chau+Philomene+One" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  </head>
+  <body>
+
+    <div id="wrapper">
+      <div id="title">PIZZA CUSTOMIZER</div>
+      <div id="stageWrap">
+        <div id="stage">SIZE</div>
+      </div>
+      <div id="stageWrap2">
+        <div id="stage2">TOPPINGS</div>
+      </div>
+      <div id="stageWrap3">
+        <div id="stage3">ALL DONE!</div><br>
+      </div>
+      <div id="btnWrap1">
+         <button id="makeAnother" class="lastPageBtn btn" onclick="restart()">MAKE ANOTHER</button>&nbsp;&nbsp;
+      </div>
+      <div id="btnWrap2">
+         <button id="prevPies" class="lastPageBtn btn" onclick="prevPies()">PREVIOUS PIES</button>
+      </div>
+      <div id="header">
+        <div id="growingHeader">
+        </div>
+        <span id="yourPizza" class="headerText">YOUR PIZZA:&nbsp;</span>
+        <span id="size" class="headerText">SIZE:&nbsp;</span>
+        <span id="toppings" class="headerText">TOPPINGS:&nbsp;</span>
+        <button id="doneBtn" class="headerText btn" onclick="toPage3()" disabled>DONE</button>
+      </div>
+      <div id="tableWrap">
+        <img id="table" src="images/table.png">
+        <img id="pizza" src="images/pizza.png">
+      </div>
+
+      <div id="small" class="sizeBtn" onclick="toPage2(event)">
+        <div class="imgWrap">
+          <img id="smallPizza" src="images/pizzaS.png">
+        </div>
+        <span id="S" class="sizeLetter">S</span>
+      </div>
+      <div id="medium" class="sizeBtn" onclick="toPage2(event)">
+        <div class="imgWrap">
+          <img id="mediumPizza" src="images/pizzaM.png">
+        </div>
+        <span id="M" class="sizeLetter">M</span>
+      </div>
+      <div id="large" class="sizeBtn" onclick="toPage2(event)">
+        <div class="imgWrap">
+          <img id="largePizza" src="images/pizzaL.png">
+        </div>
+        <span id="L" class="sizeLetter">L</span>
+      </div>
+      <div id="enterWrap">
+        <button id="enter" class="btn" onclick="enterPressed()">CUSTOMIZE</button>
+      </div>
+      <div id="nonMeats"> 
+        <center>
+          <div id="meatsText" class="toppingsText">NON-MEATS</div><br>
+          <button id="mushrooms" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">MUSHROOMS</button>
+         <!--  <img id="mushroomCheck" class="check" src="check.png"> --><br>
+          <button id="olives" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">OLIVES</button><br>
+         <!--  <button id="pepper" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">PEPPERS</button><br> -->
+          <button id="banana" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">BANANA PEPPERS</button><br>
+          <button id="spinach" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">SPINACH</button><br>
+          <button id="pineapple" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">PINEAPPLES</button><br>
+          <button id="onions" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">ONIONS</button><br>
+          <button id="tofu" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">TOFU</button>
+        </center>
+      </div>
+      <div id="meats">
+        <center>
+          <div id="nonMeatsText" class="toppingsText">MEATS</div><br>
+          <button id="pepporoni" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">PEPPERONI</button><br>
+          <button id="sausage" class="toppingBtn" onclick="newTopping(event)" width="200" height="200">SAUSAGE</button><br>
+          <button id="bacon" class="toppingBtn" width="200" height="200">BACON</button><br>
+          <button id="chicken" class="toppingBtn" width="200" height="200">CHICKEN</button><br>
+          <button id="beef" class="toppingBtn" width="200" height="200">BEEF</button><br>
+          <button id="anchovies" class="toppingBtn" width="200" height="200">ANCHOVIES</button><br>
+        </center>
+      </div>
+      <div id="canvasWrap">
+      </div>
+      <!-- <div id="imgWrap">
+      </div> -->
+    </div>
+  </body>
+  <script>
+    var page1 = true;
+    var toppingFalling = false;
+    var enterCount = 0;
+      function enterPressed(){
+        if(enterCount == 0){
+          $("#title").toggleClass("titleToggle");
+          $("#enter").toggleClass('enterToggle');
+          $(".sizeBtn").toggleClass('sizeBtnToggle');
+          $(".sizeLetter").toggleClass('sizeLetterToggle');
+          $("#stageWrap").toggleClass('stageToggle');
+          $("#header").toggleClass("headerToggle");
+          // $(".sizeBtn").on("click", toPage2);
+          // setTimeout(function(){ $("#stageWrap").toggleClass('stageToggle'); }, 150)
+          enterCount++;
+        }
+      }
+        $(".sizeBtn").mouseover(function() {
+          var image = $(this).find("img");
+          var letter = $(this).find("span");
+          $(letter).css({"transition": "all .3s linear !important", "color": "#c64a44"});
+          $('#size').html("SIZE:&nbsp;&nbsp;" + event.target.parentElement.parentElement.id);
+        }).mouseout(function() {
+          var image = $(this).find("img");
+          var letter = $(this).find("span");
+          $(this).css("transition", " all 1s cubic-bezier(.42,.68,.5,1.43)");
+          $(letter).css({"color": "black"});
+          if(page1){
+            $('#size').html("SIZE:");
+          }
+        });
+
+      function toPage2(event) {
+        page1 = false;
+        $("#canvasWrap").css("display", "block")
+        $('#doneBtn').prop("disabled", false);
+        $('#size').html("SIZE:&nbsp;&nbsp;" + event.target.parentElement.parentElement.id);
+        // transitions from size to toppings page
+        setTimeout(function(){
+          $(".sizeBtn").css("display", "none");
+          $(".sizeLetter").css("display", "none");
+          $("#stageWrap").css("display", "none");
+          $("#stageWrap2").toggleClass('stage2Toggle');
+          $("#pizza").toggleClass('pizzaToggle');
+          // $("#tableWrap").toggleClass('tableWrapToggle');
+          $("#table").toggleClass('tableToggle');
+        }, 500);
+
+        $(".sizeBtn").toggleClass('sizeBtnToggle');
+        $(".sizeLetter").toggleClass('sizeLetterToggle');
+        $("#stageWrap").toggleClass('stageToggle');
+        $("#nonMeats").toggleClass("nonMeatsToggle");
+        $('#meats').toggleClass("meatsToggle");
+      }
+
+      var toppingsArray = [];
+      //animation code
+      var canvasWidth = 700;
+      var canvasHeight = 900;
+      var x= 0;
+      var y= 0;
+
+      var sheetWidth = 18850;
+      var sheetHeight = 750;
+      var frameCount = 29;
+      var frameWidth = sheetWidth / frameCount;
+
+      class Topping {
+        constructor(id){  
+          this.curFrame = 8;
+          this.name = id;
+          this.image = new Image();
+          this.image.src = "images/" + this.name + "Sheet.png";
+          this.srcX;
+          this.srcY;
+          var canvas = document.createElement('canvas');
+          canvas.setAttribute("id", this.name + "Canvas");
+          canvas.width =  canvasWidth;
+          canvas.height = canvasHeight;
+          this.ctx = canvas.getContext('2d')
+          // $("#wrapper").append(canvas);
+          $("#canvasWrap").append(canvas);
+          console.log(this.image.src);
+        }
+        updateFrame(){
+          this.curFrame = ++this.curFrame % frameCount;
+          this.srcX = this.curFrame * frameWidth;
+          this.srcY = 0;
+          this.ctx.clearRect(x, y, frameWidth, sheetHeight);
+        }
+        draw(){
+          this.updateFrame();
+          this.ctx.drawImage(this.image, this.srcX, this.srcY, frameWidth, sheetHeight, x, y, frameWidth, sheetHeight);
+        }
+      }
+      function newTopping(event){
+        console.log(event);
+        var alreadyAdded = false;
+        for(var i = 0; i < toppingsArray.length; i++){
+          if(toppingsArray[i].name == event.target.id){
+            alreadyAdded = true;
+            removeTopping(i);
+          }
+        }
+        if(alreadyAdded == false){
+          if(toppingFalling == false){
+            $("#" + event.target.id).addClass("selected");
+            topping = new Topping(event.target.id);
+            var x = 0;
+            var intervalID = setInterval(function(){
+              toppingFalling = true;
+              topping.draw();
+              if (++x === 20) {
+                  toppingFalling = false;
+                  window.clearInterval(intervalID);
+              }
+            }, 27);
+            toppingsArray.push(topping);
+            refreshToppingsList();
+          }
+        }
+      }
+      function refreshToppingsList(){
+        var toppingString = "";
+        for(var i = 0; i<toppingsArray.length; i++){
+            if(i == toppingsArray.length - 1){
+              if(toppingsArray[i].name == "banana"){
+                toppingString = toppingString + toppingsArray[i].name + "&nbsp;peppers";
+              }
+              else{
+                toppingString = toppingString + toppingsArray[i].name;
+              }
+            }
+            else{
+              if(toppingsArray[i].name == "banana"){
+                toppingString = toppingString + toppingsArray[i].name + "&nbsp;peppers, ";
+              }
+              else{
+                toppingString = toppingString + toppingsArray[i].name + ", ";
+              }
+            }
+          }
+          $('#toppings').html("TOPPINGS:&nbsp;&nbsp;" + toppingString);
+          
+          if($("#toppings").height() > 52){
+            $("#growingHeader").css("height", "145");
+          }
+          else if($("#toppings").height() > 26){
+            $("#growingHeader").css("height", "130");
+          }
+          else{
+            $("#growingHeader").css("height", "110");
+          }
+      }
+      function removeTopping(index){
+        $("#" + toppingsArray[index].name).removeClass("selected");
+        $("#" + toppingsArray[index].name + "Canvas").remove();
+        toppingsArray.splice(index, 1);
+        refreshToppingsList();
+      }
+
+      function toPage3() {
+        setTimeout(function(){
+          $("#stageWrap2").css("display", "none");
+          $("#stageWrap3").toggleClass('stage3Toggle');
+        }, 500);
+        setTimeout(function(){
+           $(".lastPageBtn").toggleClass("btnToggle");
+        }, 800);
+        $("#stageWrap3").css("display", "block");
+        $(".lastPageBtn").css("display", "block");
+        $(".lastPageBtn").css("display", "block");
+        $("#stageWrap2").toggleClass('stage2Toggle');
+        $("#nonMeats").toggleClass("nonMeatsToggle");
+        $('#meats').toggleClass("meatsToggle");
+        $("#header").toggleClass("headerToggle");
+        // $("#tableWrap").toggleClass('tableWrapToggle');
+         $("#table").toggleClass('tableToggle');
+        // $("#pizza").toggleClass('pizzaToggle');
+      }
+
+      function prevPies(){
+
+      }
+      function restart(){
+        page1 = true;
+        $("#canvasWrap").css("display", "none")
+        setTimeout(function(){
+          $("#stageWrap3").css("display", "none");
+          $(".lastPageBtn").css("display", "none");
+        }, 500);
+        setTimeout(function(){
+          $("#stageWrap").toggleClass('stageToggle');
+        }, 900);
+        setTimeout(function(){
+          $("#header").toggleClass("headerToggle");
+          $(".sizeLetter").toggleClass('sizeLetterToggle');
+        }, 1300);
+        setTimeout(function(){
+           $(".sizeBtn").toggleClass('sizeBtnToggle');
+        }, 1100);
+        setTimeout(function(){
+          // $("#pizza").css("opacity", "1");
+          $("#pizza").toggleClass('pizzaToggle');
+        }, 2000);
+         setTimeout(function(){
+          // $("#pizza").css("opacity", "1");
+          $("#pizza").css("opacity", "1");
+        }, 3400);
+        $("#stageWrap2").css("display", "block");
+        $("#pizza").css("opacity", "0");
+        $(".lastPageBtn").toggleClass("btnToggle");
+        $('#doneBtn').prop("disabled", true);
+        $("#stageWrap").css("display", "block");
+        $(".sizeBtn").css("display", "block");
+        $(".sizeLetter").css("display", "block");
+        $("#stageWrap3").toggleClass('stage3Toggle');
+        $('#size').html("SIZE:");
+        var canvases = $( "canvas" ).get();
+        console.log(canvases);
+        // for (var i = 0; i < canvases.length; i++)
+        //   {
+        //     console.log(canvases[i].id);
+        //     // var id = $(canvases[i]).attr('id')
+        //     $('#' + canvases[i].id).css("opacity", "0");
+        //   }
+        // setTimeout(function(){
+          for (var i = toppingsArray.length - 1; i >= 0; i--)
+          {
+            removeTopping(i);
+          }
+        // }, 2000);
+        toppingsArray = [];
+        refreshToppingsList();
+      }
+</script>
+</html>
